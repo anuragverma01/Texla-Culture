@@ -1,3 +1,8 @@
+
+
+[Screencast from 22-10-23 01:30:24 PM IST.webm](https://github.com/anuragverma01/Texla-Culture/assets/99275935/d84ddbc4-433e-4aa8-b1de-cc6ee8a03752)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -41,4 +46,3 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
-[Screencast from 22-10-23 01:30:24 PM IST.webm](https://github.com/anuragverma01/Texla-Culture/assets/99275935/d84ddbc4-433e-4aa8-b1de-cc6ee8a03752)
