@@ -36,30 +36,20 @@ export const styles = StyleSheet.create({
     bottom: 20,
     textAlign: 'center',
   },
-  nextbuttonview: {
-    backgroundColor: colors.PurplePrimary,
-    paddingHorizontal: 120,
-    paddingVertical: 15,
-    position: 'absolute',
-    right: 45,
-    alignSelf: 'center',
-    borderRadius: 14,
-    marginVertical: 250,
-  },
-  nextbuttontext: {
+  buttontext: {
     color: colors.white,
     fontSize: 18,
     fontFamily: '700',
   },
-  prevbuttonView: {
+  buttonView: {
     backgroundColor: colors.PurplePrimary,
     paddingHorizontal: 120,
     paddingVertical: 15,
     position: 'absolute',
-    left: 20,
     alignSelf: 'center',
     borderRadius: 14,
-    marginVertical: 250,
+    marginTop: 0,
+    bottom: 100,
   },
   dot: {
     backgroundColor: colors.paginationcolor,

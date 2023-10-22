@@ -8,27 +8,8 @@ import colors from '../../assets/Colors/colors';
 import {useCallback} from 'react';
 import {useFocusEffect} from '@react-navigation/native';
 import text from '../../assets/Text/text';
+import {useRef} from 'react';
 
-const nextbutton = () => {
-  return (
-    <View style={styles.nextbuttonview}>
-      <Text style={styles.nextbuttontext}>{text.buttonone}</Text>
-    </View>
-  );
-};
-const prevbutton = () => {
-  const navigation = useNavigation();
-  const handlePress = () => {
-    navigation.navigate('screen3');
-  };
-  return (
-    <View>
-      <TouchableOpacity onPress={handlePress} style={styles.prevbuttonView}>
-        <Text style={styles.nextbuttontext}>{text.buttontwo}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
 const dot = () => {
   return <View style={styles.dot} />;
 };
@@ -42,14 +23,21 @@ export default () => {
       StatusBar.setBackgroundColor(colors.FrameColor);
     }, []),
   );
+  const swiperRef: any = useRef(null);
+  const handlePaginationPress = (index: number) => {
+    swiperRef?.current?.scrollBy(index);
+  };
+  const navigation = useNavigation();
 
+  const handlePress = () => {
+    navigation.navigate('screen3');
+  };
   return (
     <Swiper
+      ref={swiperRef}
       style={styles.wrapper}
-      showsButtons={true}
+      showsButtons={false}
       loop={false}
-      nextButton={nextbutton()}
-      prevButton={prevbutton()}
       showsPagination={true}
       paginationStyle={styles.paginationStyle}
       dot={dot()}
@@ -58,11 +46,21 @@ export default () => {
         <Image resizeMode="stretch" style={styles.image} source={img1} />
         <Text style={styles.headertext}>{text.introoneHedaline}</Text>
         <Text style={styles.subtitletext}>{text.introonesubtitle} </Text>
+        <TouchableOpacity
+          onPress={() => {
+            handlePaginationPress(1);
+          }}
+          style={styles.buttonView}>
+          <Text style={styles.buttontext}>{text.buttonone}</Text>
+        </TouchableOpacity>
       </View>
       <View testID="Beautiful" style={styles.slide2}>
         <Image resizeMode="stretch" style={styles.image} source={img2} />
         <Text style={styles.headertext}>{text.introtowHeadline}</Text>
         <Text style={styles.subtitle2text}>{text.introtwosubtitle} </Text>
+        <TouchableOpacity onPress={handlePress} style={styles.buttonView}>
+          <Text style={styles.buttontext}>{text.buttontwo}</Text>
+        </TouchableOpacity>
       </View>
     </Swiper>
   );
